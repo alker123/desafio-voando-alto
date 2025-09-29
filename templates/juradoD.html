@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="juradoE.css">
+  <title id="title">Jurado</title> 
+  <link rel="icon" href="27.png" type="image/png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1 id="header-title">👨‍⚖️ Jurado</h1>
+          <p id="header-subtitle">Sistema de Competição de Capoeira</p>
+        </div>
+        <div class="lang-buttons">
+          <button id="pt" class="lang-btn active" data-lang="pt">
+            <img src="br.png" alt="Português">
+            <span class="lang-text">PT</span>
+          </button>
+
+          <button id="en" class="lang-btn" data-lang="en">
+            <img src="us.png" alt="English">
+            <span class="lang-text">EN</span>
+          </button>
+
+          <button id="es" class="lang-btn" data-lang="es">
+            <img src="es.png" alt="Español">
+            <span class="lang-text">ES</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="avaliacao-box">
+      <input type="text" id="arbitro" class="input-text" placeholder="Arbitro" readonly />
+
+      <!-- Campo de Foto do Atleta -->
+      <div id="foto-atleta-container" style="display:none;">
+        <label id="nome-atleta1" for="nome-atleta1">Atleta</label>
+        <img id="foto-atleta" src="" alt="Foto do Atleta">
+      </div>
+
+
+      <div class="input-container1">
+        <label for="fase" id="fase-label">Fase:</label>
+        <input type="text" id="fase" class="input-text" placeholder="fase" readonly />
+      </div>
+
+      <div class="input-container2">
+        <label for="categoria" id="categoria-label">Categoria:</label>
+        <input type="text" id="categoria" class="input-text" placeholder="Categoria" readonly />
+      </div>
+
+      <div class="input-container3">
+        <label for="ritmo" id="ritmo-label">Solo:</label>
+        <input type="text" id="ritmo" class="input-text" placeholder="Solo" readonly />
+      </div>
+
+      <label for="atleta" id="select-atleta-label">Selecionar Atleta</label>
+      <select id="atleta">
+        <option value="">Selecione um atleta</option>
+      </select>
+
+      <div class="label-centralizada">
+        <label id="nota1" for="nota">Volume de Jogo</label>
+        <select id="nota">
+          <!-- opções serão geradas automaticamente pelo JS -->
+        </select>
+      </div>
+
+      <div class="label-centralizada">
+        <label id="nota2" for="nota">Floreio Aereo</label>
+        <input type="nota" id="floreio" placeholder="Digite a nota" />
+      </div>
+
+      <button id="enviar" class="btn-enviar">Enviar Nota</button>
+      <button id="mostrar-video">Ver Vídeo</button>
+    </div>
+
+  </div>
+
+  <div class="avaliacao-box1" style="display: none;">
+     <h1>Atletas</h1>
+  <select id="atleta1">
+    <option value="">Selecione um Atleta</option>
+    <!-- Opções de atleta serão carregadas aqui -->
+  </select>
+
+  <button id="voltar">Voltar</button>
+
+  <div id="video-container" style="display: none;">
+    <h2 id="video-title"></h2>
+    <video id="video-atleta" width="320" height="240" controls>
+      <source id="video-source" src="" type="video/mp4">
+      Seu navegador não suporta o formato de vídeo.
+    </video>
+  </div>
+  </div>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="container2">
+            <p>&copy; 2025 Sistema de Competição Voando Alto Capoeira - Desenvolvido para gerenciar classificações</p>
+        </div>
+    </footer>
+
+    
+    
+  <!--<script src="juradoE-translate.js"></script>-->
+  <script type="module" src="juradoD.js"></script>
+  <script type="module" src="juradoDvideo.js"></script>
+
+  
+</body>
+</html>
