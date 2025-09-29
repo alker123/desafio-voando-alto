@@ -89,8 +89,10 @@
 
   </div>
 
-  <div class="avaliacao-box1" style="display: none;">
-     <h1>Atletas</h1>
+ <div class="avaliacao-box1" style="display: none;">
+  <h1>Atletas</h1>
+
+  <!-- Dropdown de Atletas -->
   <select id="atleta1">
     <option value="">Selecione um Atleta</option>
     <!-- Opções de atleta serão carregadas aqui -->
@@ -101,14 +103,15 @@
   <div id="video-container" style="display: none;">
     <h2 id="video-title"></h2>
     <video id="video-atleta" width="320" height="240" controls>
-      <source id="video-source" src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
-      <source id="video-source1" src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4">
-      <source id="video-source2" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
-      <source id="video-source3" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
+      <source id="video-source" src="" type="video/mp4"> <!-- Default empty src -->
+      <source id="video-source1" src="" type="video/mp4"> <!-- Default empty src -->
+      <source id="video-source2" src="" type="video/mp4"> <!-- Default empty src -->
+      <source id="video-source3" src="" type="video/mp4"> <!-- Default empty src -->
       Seu navegador não suporta o formato de vídeo.
     </video>
   </div>
-  </div>
+</div>
+
 
    <!-- Footer -->
     <footer class="footer">
