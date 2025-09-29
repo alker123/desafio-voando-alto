@@ -100,12 +100,13 @@
   <div id="video-container" style="display: none;">
     <h2 id="video-title"></h2>
     <video id="video-atleta" width="320" height="240" controls>
-      <source id="video-source" src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
-      <source id="video-source" src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4">
-      <source id="video-source" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
-      <source id="video-source" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
-      Seu navegador não suporta o formato de vídeo.
-    </video>
+    <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+    <source src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4">
+    <source src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
+    <source src="{{ url_for('static', filename='videos/seu_video2.mp4') }}" type="video/mp4">
+    Seu navegador não suporta o formato de vídeo.
+</video>
+
   </div>
   </div>
 
