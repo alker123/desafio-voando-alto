@@ -91,22 +91,24 @@
 
   <div class="avaliacao-box1" style="display: none;">
      <h1>Atletas</h1>
-  <select id="atleta1">
-    <option value="">Selecione um Atleta</option>
-    <!-- Opções de atleta serão carregadas aqui -->
-  </select>
+  <button onclick="carregarVideo(0)">Vídeo 1</button>
+  <button onclick="carregarVideo(1)">Vídeo 2</button>
+  <button onclick="carregarVideo(2)">Vídeo 3</button>
+  <button onclick="carregarVideo(3)">Vídeo 4</button>
+
 
   <button id="voltar">Voltar</button>
 
   <div id="video-container" style="display: none;">
     <h2 id="video-title"></h2>
     <video id="video-atleta" width="320" height="240" controls>
-    <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
-    <source src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4">
-    <source src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
-    <source src="{{ url_for('static', filename='videos/seu_video2.mp4') }}" type="video/mp4">
-    Seu navegador não suporta o formato de vídeo.
-</video>
+      <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4"> 
+      <source src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4"> 
+      <source src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4"> 
+      <source src="{{ url_for('static', filename='videos/seu_video2.mp4') }}" type="video/mp4"> 
+      Seu navegador não suporta o formato de vídeo.
+    </video>
+
 
   </div>
   </div>

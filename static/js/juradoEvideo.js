@@ -54,6 +54,20 @@ const db1 = getDatabase(appEscrita);
       });
     }
 
+    function carregarVideo(videoIndex) {
+    const videoAtleta = document.getElementById('video-atleta');
+    const sources = videoAtleta.getElementsByTagName('source');
+    
+    // Verifica se o índice é válido
+    if (videoIndex >= 0 && videoIndex < sources.length) {
+        // Altera o 'src' do source selecionado
+        sources[videoIndex].src = "{{ url_for('static', filename='videos/video" + (videoIndex + 1) + ".mp4') }}";
+        videoAtleta.load();  // Recarrega o vídeo
+        videoAtleta.play();  // Inicia o vídeo
+    }
+}
+
+
     // Carregar atletas ao iniciar
     carregarAtletas();
 
