@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="juradoE.css">
   <title id="title">Jurado</title> 
-  <link rel="icon" href="27.png" type="image/png">
+  <!-- Carregando o arquivo CSS a partir da pasta estática -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/juradoE.css') }}"/>
+
+    <!-- Carregando o ícone (favicon) a partir da pasta estática -->
+    <link rel="icon" href="{{ url_for('static', filename='imagens/27.png') }}" type="image/png"/>
 </head>
 <body>
   <!-- Header -->
@@ -97,7 +100,10 @@
   <div id="video-container" style="display: none;">
     <h2 id="video-title"></h2>
     <video id="video-atleta" width="320" height="240" controls>
-      <source id="video-source" src="" type="video/mp4">
+      <source id="video-source" src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+      <source id="video-source" src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4">
+      <source id="video-source" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
+      <source id="video-source" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
       Seu navegador não suporta o formato de vídeo.
     </video>
   </div>
@@ -113,8 +119,8 @@
     
     
   <!--<script src="juradoE-translate.js"></script>-->
-  <script type="module" src="juradoD.js"></script>
-  <script type="module" src="juradoDvideo.js"></script>
+  <script type="module" src="{{ url_for('static', filename='js/juradoD.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/juradoDvideo.js') }}"></script>
 
   
 </body>
