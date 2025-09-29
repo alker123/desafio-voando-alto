@@ -19,19 +19,19 @@
           <h1 id="header-title">👨‍⚖️ Jurado</h1>
           <p id="header-subtitle">Sistema de Competição de Capoeira</p>
         </div>
-        <div class="lang-buttons">
+       <div class="lang-buttons">
           <button id="pt" class="lang-btn active" data-lang="pt">
-            <img src="br.png" alt="Português">
+            <img src="{{ url_for('static', filename='imagens/br.png') }}" alt="Português">
             <span class="lang-text">PT</span>
           </button>
 
           <button id="en" class="lang-btn" data-lang="en">
-            <img src="us.png" alt="English">
+            <img src="{{ url_for('static', filename='imagens/us.png') }}" alt="English">
             <span class="lang-text">EN</span>
           </button>
 
           <button id="es" class="lang-btn" data-lang="es">
-            <img src="es.png" alt="Español">
+            <img src="{{ url_for('static', filename='imagens/es.png') }}" alt="Español">
             <span class="lang-text">ES</span>
           </button>
         </div>
@@ -101,9 +101,7 @@
     <h2 id="video-title"></h2>
     <video id="video-atleta" width="320" height="240" controls>
       <source id="video-source" src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
-      <source id="video-source1" src="{{ url_for('static', filename='videos/jurados.mp4') }}" type="video/mp4">
-      <source id="video-source2" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
-      <source id="video-source3" src="{{ url_for('static', filename='videos/seu_video.mp4') }}" type="video/mp4">
+      
       Seu navegador não suporta o formato de vídeo.
     </video>
   </div>

@@ -20,66 +20,40 @@ const db1 = getDatabase(appEscrita);
     const videoTitle = document.getElementById("video-title");
     const videoAtleta = document.getElementById("video-atleta");
     const videoSource = document.getElementById("video-source");
-    const videoSource1 = document.getElementById("video-source1");
-    const videoSource2 = document.getElementById("video-source2");
-    const videoSource3 = document.getElementById("video-source3");
 
 
-    
+    // Função para carregar os atletas do Firebase
+    function carregarAtletas() {
+      const atletaRef = ref(db, "avaliacaodejuradoE/classificatória/1º Jogo/juradoE");
+      onValue(atletaRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          for (const atletaId in data) {
+            const atleta = data[atletaId];
+            const option = document.createElement("option");
+            option.value = atletaId;  // Usando o ID único do atleta
+            option.textContent = atleta.nome;  // Nome do atleta
+            atletaSelect.appendChild(option);
+          }
+        }
+      });
+    }
 
     // Função para carregar o vídeo selecionado
-// Função para carregar o vídeo do YouTube ao selecionar o atleta
-function carregarVideo(atletaKey) {
-  // Referência para o atleta no Firebase
-  const atletaRef = ref(db, `avaliacaodejuradoE/classificatória/1º Jogo/juradoE/${atletaKey}`);
-  
-  onValue(atletaRef, (snapshot) => {
-    const dadosAtleta = snapshot.val();
-
-    if (dadosAtleta && dadosAtleta.video) {
-      // Atualiza o título do vídeo com o nome do atleta
-      const videoTitle = document.getElementById("video-title");
-      videoTitle.textContent = dadosAtleta.nome;
-
-      // Atualiza o iframe com o link do vídeo do YouTube
-      const videoIframe = document.getElementById('video-atleta');
-      videoIframe.src = `https://www.youtube.com/embed/${getYouTubeVideoId(dadosAtleta.video)}`;
-
-      
+    function carregarVideo(atletaKey) {
+      const atletaRef = ref(db, `avaliacaodejuradoE/classificatória/1º Jogo/juradoE/${atletaKey}`);
+      onValue(atletaRef, (snapshot) => {
+        const dadosAtleta = snapshot.val();
+        if (dadosAtleta && dadosAtleta.video) {
+          // Atualiza o título do vídeo e o caminho
+          videoTitle.textContent = dadosAtleta.nome;
+          videoSource.src = dadosAtleta.video; // Caminho do vídeo (local)
+          videoAtleta.load(); // Recarrega o vídeo
+          videoContainer.style.display = "block"; // Exibe o contêiner
+        }
+      });
     }
-  });
-}
 
-// Função para extrair o ID do vídeo do YouTube da URL
-function getYouTubeVideoId(url) {
-  const regex = /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/)([a-zA-Z0-9_-]{11}))/;
-  const match = url.match(regex);
-  return match && match[1] ? match[1] : null;
-}
-
-
-// Função para carregar atletas no seletor
-function carregarAtletas() {
-  const seletorAtletas = document.getElementById("atleta1");
-  const atletasRef = ref(db, "avaliacaodejuradoE/classificatória/1º Jogo/juradoE");
-
-  onValue(atletasRef, (snapshot) => {
-    seletorAtletas.innerHTML = "<option value=''>Selecione um Atleta</option>"; // Limpa as opções
-    snapshot.forEach(childSnapshot => {
-      const atletaKey = childSnapshot.key;
-      const atleta = childSnapshot.val();
-      const option = document.createElement("option");
-      option.value = atletaKey;
-      option.textContent = atleta.nome;
-      seletorAtletas.appendChild(option);
-    });
-  });
-}
-
-// Carregar atletas quando a página for carregada
-window.onload = carregarAtletas;
-
-  
     // Carregar atletas ao iniciar
     carregarAtletas();
 
