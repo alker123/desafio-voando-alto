@@ -45,12 +45,7 @@ function carregarVideo(atletaKey) {
       const videoIframe = document.getElementById('video-atleta');
       videoIframe.src = `https://www.youtube.com/embed/${getYouTubeVideoId(dadosAtleta.video)}`;
 
-      // Exibe o contêiner de vídeo
-      const videoContainer = document.getElementById("video-container");
-      videoContainer.style.display = "block"; // Exibe o contêiner de vídeo
-      document.querySelector(".avaliacao-box1").style.display = "none"; // Esconde a seleção de atletas
-    } else {
-      alert("Vídeo não encontrado para este atleta.");
+      
     }
   });
 }
