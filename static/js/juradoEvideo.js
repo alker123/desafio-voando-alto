@@ -20,6 +20,9 @@ const db1 = getDatabase(appEscrita);
     const videoTitle = document.getElementById("video-title");
     const videoAtleta = document.getElementById("video-atleta");
     const videoSource = document.getElementById("video-source");
+    const videoSource1 = document.getElementById("video-source1");
+    const videoSource2 = document.getElementById("video-source2");
+    const videoSource3 = document.getElementById("video-source3");
 
 
     // Função para carregar os atletas do Firebase
@@ -48,35 +51,17 @@ const db1 = getDatabase(appEscrita);
           // Atualiza o título do vídeo e o caminho
           videoTitle.textContent = dadosAtleta.nome;
           videoSource.src = dadosAtleta.video; // Caminho do vídeo (local)
+          videoSource1.src = dadosAtleta.video;
+          videoSource2.src = dadosAtleta.video;
+          videoSource3.src = dadosAtleta.video;
           videoAtleta.load(); // Recarrega o vídeo
           videoContainer.style.display = "block"; // Exibe o contêiner
         }
       });
     }
 
-     // Função para carregar o vídeo conforme o botão pressionado
-  function carregarVideo(videoIndex) {
-    const videoAtleta = document.getElementById('video-atleta');
-    const videoSources = videoAtleta.getElementsByTagName('source');
-    
-    // Verifica se o índice do vídeo é válido
-    if (videoIndex >= 0 && videoIndex < videoSources.length) {
-      // Atualiza o src do video source
-      const selectedSource = videoSources[videoIndex];
-      videoAtleta.src = selectedSource.src;
-      videoAtleta.load();  // Recarrega o vídeo
-      videoAtleta.play();  // Inicia o vídeo
 
-      // Exibe o contêiner de vídeo e esconde os botões
-      document.getElementById("video-container").style.display = "block";
-      document.querySelector(".avaliacao-box1").style.display = "none";
-    }
-  }
-
- 
   
-
-
     // Carregar atletas ao iniciar
     carregarAtletas();
 
