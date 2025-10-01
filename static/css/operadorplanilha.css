@@ -18,8 +18,26 @@ body {
   border: 1px solid #555;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   position: relative;
-  top: -560px !important;
+  top: -550px !important;
   left: 200px !important;
+}
+
+.tabela-container1 {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #404040 0%, #4a4a4a 100%);
+  border-radius: 8px;
+  border: 1px solid #555;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 100px !important;
+  left: 400px !important;
+
+  /* Definindo a altura máxima para permitir rolagem */
+  max-height: 500px; /* Ajuste conforme necessário */
+  overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
+  width: calc(100% - 40px); /* Ajusta a largura da tabela */
 }
 
 /* CONTÊINER PRINCIPAL */
@@ -50,6 +68,33 @@ body {
   font-weight: bold;
   color: #ff6b35;
 }
+
+/* Estilo para os inputs dos árbitros */
+#arbitroA, #arbitroB, #arbitroC {
+  color: #007bff;
+  background: transparent;
+  border: none;
+  width: 13%;
+  text-align: center;
+  margin-right: 10px;  /* Adiciona a distância entre os campos */
+  padding: 5px;        /* Opcional: adicione padding para deixar os campos mais bonitos */
+  font-size: 16px;     /* Ajuste do tamanho da fonte para melhor visualização */
+  position: relative;
+  left: 335px !important;
+}
+
+#arbitroA {
+  margin-left: 0; /* A primeira caixa não precisa de margem à esquerda */
+}
+
+#arbitroB {
+  margin-left: 60px;  /* Distância entre o arbitroA e o arbitroB */
+}
+
+#arbitroC {
+  margin-left: -2px;  /* Distância entre o arbitroB e o arbitroC */
+}
+
 
 /* SELETORES */
 .select-estilizado,
@@ -101,7 +146,7 @@ label {
 
 #MediaTotal,
 #voltarParaTabelaPrincipal,
-#PDF0, #PDF1,
+#PDF0, #PDF1, #salvar2,
 #excluir,
 #enviar1,
 #oitavas, #quartas,#semifinal, #final {
@@ -117,7 +162,7 @@ label {
 #voltarParaTabelaPrincipal:hover,
 #MediaTotal:hover,
 #PDF0:hover, #PDF1:hover,
-#enviar:hover,
+#enviar:hover, #salvar2:hover,
 #excluir:hover,
 #oitavas:hover, #quartas:hover, #semifinal:hover, #final:hover {
  background: linear-gradient(135deg, #0056b3 0%, #004085 50%, #002752 100%);
