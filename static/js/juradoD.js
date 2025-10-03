@@ -14,17 +14,17 @@ const appEscrita = initializeApp(
 const dbLeitura = getDatabase(appLeitura);
 const dbEscrita = getDatabase(appEscrita);
 
-// Caminho para o árbitro A
-const refArbitroB = ref(dbEscrita, 'arbitros/arbitroB');
+// Caminho para o árbitro D
+const refArbitroA = ref(dbEscrita, 'arbitros/arbitroA');
 
 // Recuperar os dados do Firebase e preencher o campo de texto
-onValue(refArbitroB, (snapshot) => {
-    const arbitroB = snapshot.val();  // Recupera o valor de arbitroA no Firebase
-    if (arbitroB) {
+onValue(refArbitroA, (snapshot) => {
+    const arbitroA = snapshot.val();  // Recupera o valor de arbitroA no Firebase
+    if (arbitroA) {
         // Preenche o campo de entrada com o valor de arbitroA
-        document.getElementById("arbitro").value = arbitroB;
+        document.getElementById("arbitro").value = arbitroA;
     } else {
-        console.log("Arbitro B não encontrado no Firebase.");
+        console.log("Arbitro A não encontrado no Firebase.");
     }
 });
 
