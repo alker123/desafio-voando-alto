@@ -259,10 +259,10 @@ function exibirLinhasFiltradas() {
       <td><input type="checkbox" /></td>
     <td>${dado.atleta}</td>
     <td>${dado.categoria}</td>
-    <td>${dado.vjogoA.toFixed(1)}</td>  <!-- Nota de Volume de Jogo A -->
-    <td>${dado.solo.toFixed(1)}</td>  <!-- Nota de Floreio de Solo -->
     <td>${dado.aereo.toFixed(1)}</td>  <!-- Nota de Floreio Aéreo -->
     <td>${dado.vjogoB.toFixed(1)}</td>  <!-- Nota de Volume de Jogo B -->
+    <td>${dado.vjogoA.toFixed(1)}</td>  <!-- Nota de Volume de Jogo A -->
+    <td>${dado.solo.toFixed(1)}</td>  <!-- Nota de Floreio de Solo -->
     <td>${dado.publico.toFixed(1)}</td>  <!-- Nota do Público -->
     <td>${dado.bonus.toFixed(1)}</td>  <!-- Nota de Bônus -->
     <td>${(Math.floor(dado.media * 100) / 100).toFixed(1)}</td>  <!-- Média Final -->
