@@ -90,39 +90,78 @@
   </div>
 
  <div class="avaliacao-box1" style="display: none;">
-  <h1>Atletas</h1>
 
-  <!-- Dropdown de Atletas -->
-  <select id="atleta1">
-    <option value="">Selecione um Atleta</option>
-    <!-- Opções de atleta serão carregadas aqui -->
-  </select>
+    <!-- TABELA PRINCIPAL -->
+    <div id="tabela-principal" class="tabela-view">
+      <div class="container1">
+        <h2 style="display: none;">
+          Jogo: <span id="ritmo-atual">Selecionar</span>
+          <select id="seletor-ritmo" class="select-estilizado" style="display: none;">
+            <option value="1º Jogo">1º Jogo</option>
 
-  <button id="voltar">Voltar</button>
+          </select>
+        </h2>
 
-  <div id="video-container" style="display: none;">
-    <h2 id="video-title"></h2>
-    <video id="video-atleta" width="320" height="240" controls>
-      <source id="video-source" src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
-      
-      Seu navegador não suporta o formato de vídeo.
-    </video>
-  </div>
-</div>
+        <div class="botoes-acoes" style="margin-bottom:10px;">
+          <div>
+            <label for="seletor-categoria" class="label-categoria" style="display: none;">Categoria:</label>
+            <select id="seletor-categoria" class="select-estilizado2" style="display: none;">
+              <option value="">Todas</option>
+            </select>
 
+            <!-- Seletor de Grupo de Fases -->
+            <label for="seletor-fase-grupo" style="display: none;">Fase:</label>
+            <select id="seletor-fase-grupo" style="display: none;">
+              <option value="classificatória">Classificatória</option>
+            </select>
 
-   <!-- Footer -->
-    <footer class="footer">
-        <div class="container2">
-            <p>&copy; 2025 Sistema de Competição Voando Alto Capoeira - Desenvolvido para gerenciar classificações</p>
+          </div>
         </div>
-    </footer>
+      </div>
 
+      <div class="scroll-tabela">
+
+
+        <table id="tabela-principal1" border="1" cellspacing="0" cellpadding="5">
+          <thead>
+            <tr>
+              <th id="atleta">Atleta</th>
+              <th id="categoria">Categoria</th>
+              <th id="solo">Floreio solo</th>
+              <th id="vjogoA">Volume de Jogo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" class="empty-message">Nenhum dado encontrado</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <button id="voltar">Voltar</button>
+    <button id="PDF5">Download PDF</button>
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container2">
+      <p>&copy; 2025 Sistema de Competição Voando Alto Capoeira - Desenvolvido para gerenciar classificações</p>
+    </div>
+  </footer>
     
     
   <!--<script src="juradoE-translate.js"></script>-->
   <script type="module" src="{{ url_for('static', filename='js/juradoE.js') }}"></script>
     <script type="module" src="{{ url_for('static', filename='js/juradoEvideo.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/operadorP03.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- jsPDF autoTable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
   
 </body>
 </html>

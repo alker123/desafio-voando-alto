@@ -1,11 +1,4 @@
 /* Centralização do container na tela */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
 body {
   margin: 0;
   padding: 0;
@@ -424,7 +417,7 @@ input[readonly] {
 }
 
 /* Botão de envio */
-#enviar, #mostrar-video, #voltar {
+#enviar, #mostrar-video, #voltar, #PDF5  {
   width: auto;
   padding: 10px 20px;
   color: white;
@@ -439,7 +432,7 @@ input[readonly] {
   position: relative;
   top: 0px !important;
 }
-#enviar:hover, #mostrar-video:hover, #voltar:hover {
+#enviar:hover, #mostrar-video:hover, #voltar:hover, #PDF5:hover {
   background: linear-gradient(135deg, #0056b3 0%, #004085 50%, #002752 100%);
     box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
     transform: translateY(-2px);
@@ -447,8 +440,14 @@ input[readonly] {
 
 #voltar {
     position: relative;
-    top: -75px !important;
-    left: 100px !important;
+    top: 35px !important;
+    left: -50px !important;
+}
+
+#PDF5 {
+  position: relative;
+  top: -18px !important;
+  left: 100px !important;
 }
 
 #atleta1 {
@@ -551,10 +550,93 @@ h2#video-title {
   height: auto;  /* A altura do vídeo será ajustada automaticamente */
 }
 
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Caixa de avaliação */
+.avaliacao-box1 {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+#seletor-fase-grupo {
+  padding: 5px;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+}
+
+
+
+/* Tabela */
+.scroll-tabela {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #222;
+}
+
+th {
+  background-color: #fff;
+  color: #222;
+  font-size: 16px;
+}
+
+td {
+  background-color: #fff;
+  font-size: 14px;
+}
+
+th#atleta {
+  background: #fff;
+  color: #222;
+  font-size: 16px;
+  width: 30%;
+  border-radius: none;
+}
+
+/* Mensagem "Nenhum dado encontrado" */
+.empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
+
+
 
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+
+  .container1 {
+    padding: 10px;
+  }
+
+  .scroll-tabela table {
+    font-size: 12px;
+  }
+
   .form-container {
     padding: 20px;
     margin-top: 20px;
@@ -609,8 +691,8 @@ h2#video-title {
 
  #voltar {
     position: relative;
-    top: -70px !important;
-    left: 80px !important;
+    top: 35px !important;
+    left: -50px !important;
     
  }
 }
