@@ -235,3 +235,31 @@ preencherNotas();
       avaliacaoBox1.style.display = 'none';
     });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const selectAtleta = document.getElementById('atleta1');
+  const iframe = document.getElementById('video1');
+  
+  // Objetos com os links dos vídeos dos atletas
+  const videos = {
+    "atleta1": "https://www.youtube.com/embed/wDllB-7FIYA?si=Cjaa_q6UDZNRMHCj",
+    "atleta2": "https://www.youtube.com/embed/r_8Xm3XowCM?si=Rm1pNN2ZbWUpiAHt" , // Substitua com o URL real 
+    "atleta3": "https://www.youtube.com/embed/2JyD95YNuXM?si=AbZBirAP34HU2hst",  // Substitua com o URL real
+    "atleta4": "https://www.youtube.com/embed/VIDEO3_URL"  // Substitua com o URL real
+  };
+
+  // Evento que detecta mudança no seletor de atletas
+  selectAtleta.addEventListener('change', function() {
+    const atletaSelecionado = selectAtleta.value;
+
+    if (atletaSelecionado && videos[atletaSelecionado]) {
+      // Altera o src do iframe para o vídeo do atleta
+      iframe.src = videos[atletaSelecionado];
+      
+      // Exibe o iframe
+      iframe.style.display = 'block';
+    } else {
+      // Se não houver seleção válida, esconde o iframe
+      iframe.style.display = 'none';
+    }
+  });
+});

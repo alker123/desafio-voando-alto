@@ -438,6 +438,12 @@ input[readonly] {
     transform: translateY(-2px);
 }
 
+#mostrar-video {
+  position: relative;
+  top: 0px !important;
+  left: 80px !important;
+}
+
 #voltar {
     position: relative;
     top: 35px !important;
@@ -623,6 +629,16 @@ th#atleta {
   color: #888;
 }
 
+ #atleta1 {
+    background: transparent;
+    color: #fff;
+    position: relative;
+    top: -30px !important;
+    left: 30px !important;
+    
+    
+ }
+
 
 
 
@@ -684,10 +700,18 @@ th#atleta {
 
   #atleta1 {
     position: relative;
-    top: -20px !important;
-    left: 10px !important;
+    top: -33px !important;
+    left: 30px !important;
     
  }
+
+  
+ #mostrar-video {
+  position: relative;
+  top: 0px !important;
+  left: 80px !important;
+}
+
 
  #voltar {
     position: relative;
@@ -695,4 +719,5 @@ th#atleta {
     left: -50px !important;
     
  }
+
 }
