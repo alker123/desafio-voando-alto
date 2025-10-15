@@ -240,11 +240,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const iframe = document.getElementById('video1');
   
   // Objetos com os links dos vídeos dos atletas
-  const videos = {
-    "atleta1": "https://www.youtube.com/embed/wDllB-7FIYA?si=Cjaa_q6UDZNRMHCj",
-    "atleta2": "https://www.youtube.com/embed/r_8Xm3XowCM?si=Rm1pNN2ZbWUpiAHt" , // Substitua com o URL real 
-    "atleta3": "https://www.youtube.com/embed/2JyD95YNuXM?si=AbZBirAP34HU2hst",  // Substitua com o URL real
-    "atleta4": "https://www.youtube.com/embed/VIDEO3_URL"  // Substitua com o URL real
+ const videos = {
+    "atleta1": "https://www.youtube.com/embed/cM_BMLOynno?si=bPKAhPDZrsA21X0K",
+    "atleta2": "https://www.youtube.com/embed/Pm94zvEyp0s?si=0rdyw8MNd60ed45B" , // Substitua com o URL real 
+    "atleta3": "https://www.youtube.com/embed/UKD2Mhf6Gpc?si=_3TjlrJHauWnRCb4" ,  // Substitua com o URL real
+    "atleta4": "https://www.youtube.com/embed/TOftQvOprtE?si=_l2_gWDoFsOLHC8Z" // Substitua com o URL real
   };
 
   // Evento que detecta mudança no seletor de atletas
